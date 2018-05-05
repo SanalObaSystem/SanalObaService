@@ -27,7 +27,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
-//@EnableJpaRepositories(basePackages = "org.oba.portal.repo")
+@EnableJpaRepositories(basePackages = "org.oba.portal.repo")
 public class AppConfig extends WebSecurityConfigurerAdapter {
 
 	/*
