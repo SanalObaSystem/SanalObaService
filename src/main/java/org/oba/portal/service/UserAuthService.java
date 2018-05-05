@@ -27,7 +27,7 @@ public class UserAuthService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String loginname) throws UsernameNotFoundException {
 		Optional<AaUser> userOpt = userRepository.findByLoginname(loginname);
-		userOpt.orElseThrow(() -> {throw new UsernameNotFoundException(String.format("The username %s doesn't exist", loginname));});
+		userOpt.orElseThrow(() -> new UsernameNotFoundException(String.format("The username %s doesn't exist", loginname)));
 		List<AaRole> userRoles = roleRepository.findByQueryParam(loginname);
 
 System.out.println("ROLES begin");
